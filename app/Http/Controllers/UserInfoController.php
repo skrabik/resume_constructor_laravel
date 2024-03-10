@@ -8,6 +8,6 @@ class UserInfoController extends Controller
 {
     public function main ()
     {
-        return view('userForm');
+        return view('userForm', $_GET);
     }
 }

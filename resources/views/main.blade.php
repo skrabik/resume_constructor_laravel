@@ -15,7 +15,7 @@
         }
     </style>
     <div class="button-block">
-        <a href="{{route('create.main')}}"><button id="start_button">Создать резюме</button></a>
+        <a href="{{route('select_template.render')}}"><button id="start_button">Создать резюме</button></a>
     </div>
 </div>
 @endsection

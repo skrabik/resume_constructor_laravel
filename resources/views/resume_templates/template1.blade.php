@@ -163,22 +163,22 @@
 <div class="container">
     <div class="header">
         <div class="full-name">
-            <span class="first-name">{{$first_name}}</span>
-            <span class="last-name">{{$last_name}}</span>
+            <span class="first-name">{{ $first_name }}</span>
+            <span class="last-name">{{ $last_name }}</span>
         </div>
         <div class="contact-info">
             <span class="email">Email: </span>
-            <span class="email-val">{{$email}}</span>
+            <span class="email-val">{{ $email }}</span>
             <span class="separator"></span>
             <span class="phone">Phone: </span>
-            <span class="phone-val">{{$phone}}</span>
+            <span class="phone-val">{{ $phone }}</span>
         </div>
 
         <div class="about">
-            <span class="position">Front-End Developer </span>
+            <span class="position">{{ $position }}</span>
             <span class="desc">
-        I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow.
-      </span>
+                {{ $description }}
+            </span>
         </div>
     </div>
     <div class="details">
@@ -257,58 +257,37 @@
         <div class="section">
             <div class="section__title">Skills</div>
             <div class="skills">
-                <div class="skills__item">
-                    <div class="left"><div class="name">
-                            Javascript
-                        </div></div>
-                    <div class="right">
-                        <input  id="ck1" type="checkbox" checked/>
+                @foreach($skills as $key => $skill)
+                    <div class="skills__item">
+                        <div class="left"><div class="name">
+                                {{ $skill }}
+                            </div></div>
+                        <div class="right">
+                            <input  id="ck1" type="checkbox" checked/>
 
-                        <label for="ck1"></label>
-                        <input id="ck2" type="checkbox" checked/>
+                            <label for="ck1"></label>
+                            <input id="ck2" type="checkbox" checked/>
 
-                        <label for="ck2"></label>
-                        <input id="ck3" type="checkbox" />
+                            <label for="ck2"></label>
+                            <input id="ck3" type="checkbox" />
 
-                        <label for="ck3"></label>
-                        <input id="ck4" type="checkbox" />
-                        <label for="ck4"></label>
-                        <input id="ck5" type="checkbox" />
-                        <label for="ck5"></label>
+                            <label for="ck3"></label>
+                            <input id="ck4" type="checkbox" />
+                            <label for="ck4"></label>
+                            <input id="ck5" type="checkbox" />
+                            <label for="ck5"></label>
 
+                        </div>
                     </div>
-                </div>
-
+              @endforeach
             </div>
-            <div class="skills__item">
-                <div class="left"><div class="name">
-                        CSS</div></div>
-                <div class="right">
-                    <input  id="ck1" type="checkbox" checked/>
-
-                    <label for="ck1"></label>
-                    <input id="ck2" type="checkbox" checked/>
-
-                    <label for="ck2"></label>
-                    <input id="ck3" type="checkbox" />
-
-                    <label for="ck3"></label>
-                    <input id="ck4" type="checkbox" />
-                    <label for="ck4"></label>
-                    <input id="ck5" type="checkbox" />
-                    <label for="ck5"></label>
-
-                </div>
-            </div>
-
-        </div>
         <div class="section">
             <div class="section__title">
                 Interests
             </div>
             <div class="section__list">
                 <div class="section__list-item">
-                    {{$about_me}}
+                    {{ $about_me }}
                 </div>
             </div>
         </div>

@@ -9,6 +9,9 @@
             outline-offset: 0;
 
         }
+        .body {
+            height: 100%;
+        }
         .header {
             background: #9fcdff;
             font-size: 3ex;

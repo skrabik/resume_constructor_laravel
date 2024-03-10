@@ -8,31 +8,22 @@
     <body>
         @yield('template')
         <div>
-            <form method="post" action="{{route('check_resume.download')}}" class="data-form">
+            <form method="post" action="{{ route('check_resume.download') }}" class="data-form">
                 @csrf
-                <input type="hidden" name="first_name" placeholder="Иван" value="{{$first_name}}">
-                <input type="hidden" name="last_name" placeholder="Иванов" value="{{$last_name}}">
-                <input type="hidden" name="patronymic" placeholder="Иванович">
-                <input type="hidden" name="date_of_birth" placeholder="2024-01-01" min="1985-01-01" max="2025-01-01" />
-                <input type="hidden" name="email" placeholder="myemail@example.com">
-                <input type="hidden" name="phone" placeholder="880088888">
-                <select type="hidden" name="busyness">
-                    <option>Полная</option>
-                    <option>Частичная</option>
-                </select>
-                <select type="hidden" name="business_trip">
-                    <option>Готов</option>
-                    <option>Не готов</option>
-                </select>
-                <input type="hidden" name="sity" placeholder="Например: Москва">
-                <select type="hidden">
-                    <option>Мужской</option>
-                    <option>Женский</option>
-                </select>
-                <textarea type="hidden" name="education"></textarea>
-                <input type="hidden" name="year" placeholder="2024-01-01" min="1985-01-01" max="2025-01-01" />
-                <input type="hidden" name="languages">
-                <textarea type="hidden" name="about_me" cols="" rows="" placeholder="Студент российского университета дружбы народов"></textarea>
+                <input type="hidden" name="first_name" value="{{ $first_name }}">
+                <input type="hidden" name="last_name" value="{{ $last_name }}">
+                <input type="hidden" name="patronymic" value="{{ $patronymic }}">
+                <input type="hidden" name="date_of_birth" value="{{ $date_of_birth }}"/>
+                <input type="hidden" name="email" value="{{ $email }}">
+                <input type="hidden" name="phone" value="{{ $phone }}">
+                <input type="hidden" name="busyness" value="{{ $busyness }}">
+                <input type="hidden" name="business_trip" value="{{ $business_trip }}">
+                <input type="hidden" name="city" value="{{ $city }}">
+                <input type="hidden" name="gender" value="{{ $gender }}">
+                <input type="hidden" name="education" value="{{ $education }}">
+                <input type="hidden" name="year" value="{{ $year }}">
+                <input type="hidden" name="languages" value="{{ $languages }}">
+                <input type="hidden" name="about_me" value="{{ $about_me }}">
                 <button class="submit-button" type="submit">Скачать в pdf</button>
             </form>
         </div>
