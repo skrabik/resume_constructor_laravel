@@ -172,6 +172,9 @@
             <span class="separator"></span>
             <span class="phone">Phone: </span>
             <span class="phone-val">{{ $phone }}</span>
+            <span class="separator"></span>
+            <span class="email">Age: </span>
+            <span class="email-val">{{ $age }}</span>
         </div>
 
         <div class="about">
@@ -184,80 +187,49 @@
     <div class="details">
         <div class="section">
             <div class="section__title">Experience</div>
-            <div class="section__list">
-                <div class="section__list-item">
-                    <div class="left">
-                        <div class="name">KlowdBox</div>
-                        <div class="addr">San Fr, CA</div>
-                        <div class="duration">Jan 2011 - Feb 2015</div>
+            @foreach($experience as $key => $exp)
+                @if($exp)
+                    <div class="section__list">
+                        <div class="section__list-item">
+                            <div class="left">
+                                <div class="name">{{$exp[2]}}</div>
+                                <div class="duration">{{$exp[3]}}</div>
+                            </div>
+                            <div class="right">
+                                <div class="name">{{$exp[0]}}</div>
+                                <div class="desc">{{ $exp[1]}}</div>
+                            </div>
+                        </div>
+                @endif
+            @endforeach
                     </div>
-                    <div class="right">
-                        <div class="name">Fr developer</div>
-                        <div class="desc">did This and that</div>
-                    </div>
-                </div>
-                <div class="section__list-item">
-                    <div class="left">
-                        <div class="name">Akount</div>
-                        <div class="addr">San Monica, CA</div>
-                        <div class="duration">Jan 2011 - Feb 2015</div>
-                    </div>
-                    <div class="right">
-                        <div class="name">Fr developer</div>
-                        <div class="desc">did This and that</div>
-                    </div>
-                </div>
-
             </div>
         </div>
         <div class="section">
             <div class="section__title">Education</div>
             <div class="section__list">
                 <div class="section__list-item">
-                    <div class="left">
-                        <div class="name">Sample Institute of technology</div>
-                        <div class="addr">San Fr, CA</div>
-                        <div class="duration">Jan 2011 - Feb 2015</div>
-                    </div>
-                    <div class="right">
-                        <div class="name">Fr developer</div>
-                        <div class="desc">did This and that</div>
-                    </div>
+                    {{ $education }}
                 </div>
-                <div class="section__list-item">
-                    <div class="left">
-                        <div class="name">Akount</div>
-                        <div class="addr">San Monica, CA</div>
-                        <div class="duration">Jan 2011 - Feb 2015</div>
-                    </div>
-                    <div class="right">
-                        <div class="name">Fr developer</div>
-                        <div class="desc">did This and that</div>
-                    </div>
-                </div>
-
             </div>
 
         </div>
         <div class="section">
             <div class="section__title">Projects</div>
             <div class="section__list">
+                @for($i=0;$i<2;$i++) @if($project[$i])
                 <div class="section__list-item">
-                    <div class="name">DSP</div>
-                    <div class="text">I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow.</div>
+                    <div class="name">{{$project[$i]['name']}}</div>
+                    <div class="text">{{$project[$i]['description']}}</div>
                 </div>
-
-                <div class="section__list-item">
-                    <div class="name">DSP</div>
-                    <div class="text">I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow. <a href="/login">link</a>
-                    </div>
-                </div>
+                @endif @endfor
             </div>
         </div>
         <div class="section">
             <div class="section__title">Skills</div>
             <div class="skills">
                 @foreach($skills as $key => $skill)
+                    @if($skill)
                     <div class="skills__item">
                         <div class="left"><div class="name">
                                 {{ $skill }}
@@ -279,6 +251,7 @@
 
                         </div>
                     </div>
+                    @endif
               @endforeach
             </div>
         <div class="section">

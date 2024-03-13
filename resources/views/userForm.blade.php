@@ -6,6 +6,16 @@
         flex-direction: column;
         font-size: 3ex;
     }
+    body {
+        min-height: 100%;
+        background: #eee;
+        font-family: 'Lato', sans-serif;
+        font-weight: 400;
+        color: #222;
+        font-size: 14px;
+        line-height: 26px;
+        padding-bottom: 50px;
+    }
     .submit-button {
         text-align: center;
         font-size: 20px;
@@ -54,12 +64,45 @@
         <input class="input_field" type="text" name="last_name" placeholder="Иванов">
         <label for="patronymic">Отчество</label>
         <input class="input_field" type="text" name="patronymic" placeholder="Иванович">
-        <label for="date_of_birth">Дата рождения</label>
-        <input class="date_field" type="date" name="date_of_birth" placeholder="2024-01-01" min="1985-01-01" max="2025-01-01" />
+        <label for="age">Возраст</label>
+        <input class="input_field" type="text" name="age">
         <label for="email">Электронная почта</label>
         <input class="input_field" type="email" name="email" placeholder="myemail@example.com">
         <label for="phone">Телефон</label>
         <input class="input_field" type="tel" name="phone" placeholder="880088888">
+
+        <label for="position">Должность</label>
+        <input class="input_field" type="text" name="position" placeholder="developer">
+
+        <label for="description">Краткое описание</label>
+        <textarea class="text_field" name="description" placeholder="Хочу разрабатывать API на php"></textarea>
+
+        <label for="experience">Опыт</label>
+
+        @for($i = 0; $i<3; $i++)
+            <label>Организация</label>
+            <input class="input_field" name="experience[{{$i}}][2]">
+            <label>Дата работы</label>
+            <input class="input_field" name="experience[{{$i}}][3]">
+            <label>Должность</label>
+            <input class="input_field" name="experience[{{$i}}][0]">
+            <label>Описание</label>
+            <textarea class="text_field" name="experience[{{$i}}][1]"></textarea>
+        @endfor
+
+        <label>Проекты</label>
+        @for($i=0;$i<2;$i++)
+            <label>Название проекта</label>
+            <input class="input_field" name="project[{{$i}}][name]">
+            <label>Описание проекта</label>
+            <textarea class="text_field" name="project[{{$i}}][description]"></textarea>
+        @endfor
+
+        <label for="skills">Ключевые навыки</label>
+        @for($i = 0; $i<5; $i++)
+            <input name="skills[{{$i}}]">
+        @endfor
+
 
         <label for="busyness">Занятость</label>
         <select class="select-field" name="busyness">

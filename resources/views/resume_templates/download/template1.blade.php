@@ -1,11 +1,9 @@
 <html>
-    <head>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: DejaVu Sans;
         }
         html {
             height: 100%;
@@ -14,12 +12,12 @@
         body {
             min-height: 100%;
             background: #eee;
+            font-family: 'DejaVu Sans', sans-serif;
             font-weight: 400;
             color: #222;
             font-size: 14px;
             line-height: 26px;
             padding-bottom: 50px;
-            font-family: DejaVu Sans;
         }
 
         .container {
@@ -160,163 +158,117 @@
             }
         }
     </style>
-    </head>
+
+    <head></head>
+
     <body>
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-    <div class="container">
-        <div class="header">
-            <div class="full-name">
-                <span class="first-name">{{$first_name}}</span>
-                <span class="last-name">{{$last_name}}</span>
-            </div>
-            <div class="contact-info">
-                <span class="email">Email: </span>
-                <span class="email-val">{{$email}}</span>
-                <span class="separator"></span>
-                <span class="phone">Phone: </span>
-                <span class="phone-val">{{$phone}}</span>
-            </div>
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+        <div class="container">
+            <div class="header">
+                <div class="full-name">
+                    <span class="first-name">{{ $first_name }}</span>
+                    <span class="last-name">{{ $last_name }}</span>
+                </div>
+                <div class="contact-info">
+                    <span class="email">Email: </span>
+                    <span class="email-val">{{ $email }}</span>
+                    <span class="separator"></span>
+                    <span class="phone">Phone: </span>
+                    <span class="phone-val">{{ $phone }}</span>
+                    <span class="separator"></span>
+                    <span class="email">Age: </span>
+                    <span class="email-val">{{ $age }}</span>
+                </div>
 
-            <div class="about">
-                <span class="position">Front-End Developer </span>
-                <span class="desc">
-        I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow.
-      </span>
+                <div class="about">
+                    <span class="position">{{ $position }}</span>
+                    <span class="desc">
+                    {{ $description }}
+                </span>
+                </div>
             </div>
-        </div>
-        <div class="details">
-            <div class="section">
-                <div class="section__title">Experience</div>
-                <div class="section__list">
-                    <div class="section__list-item">
-                        <div class="left">
-                            <div class="name">KlowdBox</div>
-                            <div class="addr">San Fr, CA</div>
-                            <div class="duration">Jan 2011 - Feb 2015</div>
-                        </div>
-                        <div class="right">
-                            <div class="name">Fr developer</div>
-                            <div class="desc">did This and that</div>
-                        </div>
-                    </div>
-                    <div class="section__list-item">
-                        <div class="left">
-                            <div class="name">Akount</div>
-                            <div class="addr">San Monica, CA</div>
-                            <div class="duration">Jan 2011 - Feb 2015</div>
-                        </div>
-                        <div class="right">
-                            <div class="name">Fr developer</div>
-                            <div class="desc">did This and that</div>
-                        </div>
-                    </div>
-
+            <div class="details">
+                <div class="section">
+                    <div class="section__title">Experience</div>
+                    @foreach($experience as $key => $exp)
+                        @if($exp)
+                            <div class="section__list">
+                                <div class="section__list-item">
+                                    <div class="left">
+                                        <div class="name">{{$exp[2]}}</div>
+                                        <div class="duration">{{$exp[3]}}</div>
+                                    </div>
+                                    <div class="right">
+                                        <div class="name">{{$exp[0]}}</div>
+                                        <div class="desc">{{ $exp[1]}}</div>
+                                    </div>
+                                </div>
+                                @endif
+                                @endforeach
+                            </div>
                 </div>
             </div>
             <div class="section">
                 <div class="section__title">Education</div>
                 <div class="section__list">
                     <div class="section__list-item">
-                        <div class="left">
-                            <div class="name">Sample Institute of technology</div>
-                            <div class="addr">San Fr, CA</div>
-                            <div class="duration">Jan 2011 - Feb 2015</div>
-                        </div>
-                        <div class="right">
-                            <div class="name">Fr developer</div>
-                            <div class="desc">did This and that</div>
-                        </div>
+                        {{ $education }}
                     </div>
-                    <div class="section__list-item">
-                        <div class="left">
-                            <div class="name">Akount</div>
-                            <div class="addr">San Monica, CA</div>
-                            <div class="duration">Jan 2011 - Feb 2015</div>
-                        </div>
-                        <div class="right">
-                            <div class="name">Fr developer</div>
-                            <div class="desc">did This and that</div>
-                        </div>
-                    </div>
-
                 </div>
 
             </div>
             <div class="section">
                 <div class="section__title">Projects</div>
                 <div class="section__list">
-                    <div class="section__list-item">
-                        <div class="name">DSP</div>
-                        <div class="text">I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow.</div>
-                    </div>
-
-                    <div class="section__list-item">
-                        <div class="name">DSP</div>
-                        <div class="text">I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow. <a href="/login">link</a>
+                    @for($i=0;$i<2;$i++) @if($project[$i])
+                        <div class="section__list-item">
+                            <div class="name">{{$project[$i]['name']}}</div>
+                            <div class="text">{{$project[$i]['description']}}</div>
                         </div>
-                    </div>
+                    @endif @endfor
                 </div>
             </div>
             <div class="section">
                 <div class="section__title">Skills</div>
                 <div class="skills">
-                    <div class="skills__item">
-                        <div class="left"><div class="name">
-                                Javascript
-                            </div></div>
-                        <div class="right">
-                            <input  id="ck1" type="checkbox" checked/>
+                    @foreach($skills as $key => $skill)
+                        @if($skill)
+                            <div class="skills__item">
+                                <div class="left"><div class="name">
+                                        {{ $skill }}
+                                    </div></div>
+                                <div class="right">
+                                    <input  id="ck1" type="checkbox" checked/>
 
-                            <label for="ck1"></label>
-                            <input id="ck2" type="checkbox" checked/>
+                                    <label for="ck1"></label>
+                                    <input id="ck2" type="checkbox" checked/>
 
-                            <label for="ck2"></label>
-                            <input id="ck3" type="checkbox" />
+                                    <label for="ck2"></label>
+                                    <input id="ck3" type="checkbox" />
 
-                            <label for="ck3"></label>
-                            <input id="ck4" type="checkbox" />
-                            <label for="ck4"></label>
-                            <input id="ck5" type="checkbox" />
-                            <label for="ck5"></label>
+                                    <label for="ck3"></label>
+                                    <input id="ck4" type="checkbox" />
+                                    <label for="ck4"></label>
+                                    <input id="ck5" type="checkbox" />
+                                    <label for="ck5"></label>
 
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+                <div class="section">
+                    <div class="section__title">
+                        Interests
+                    </div>
+                    <div class="section__list">
+                        <div class="section__list-item">
+                            {{ $about_me }}
                         </div>
-                    </div>
-
-                </div>
-                <div class="skills__item">
-                    <div class="left"><div class="name">
-                            CSS</div></div>
-                    <div class="right">
-                        <input  id="ck1" type="checkbox" checked/>
-
-                        <label for="ck1"></label>
-                        <input id="ck2" type="checkbox" checked/>
-
-                        <label for="ck2"></label>
-                        <input id="ck3" type="checkbox" />
-
-                        <label for="ck3"></label>
-                        <input id="ck4" type="checkbox" />
-                        <label for="ck4"></label>
-                        <input id="ck5" type="checkbox" />
-                        <label for="ck5"></label>
-
-                    </div>
-                </div>
-
-            </div>
-            <div class="section">
-                <div class="section__title">
-                    Interests
-                </div>
-                <div class="section__list">
-                    <div class="section__list-item">
-                        {{$about_me}}
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-</body>
+        </div>
+    </body>
 </html>

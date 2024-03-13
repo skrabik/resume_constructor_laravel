@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Dompdf\Dompdf;
 use Illuminate\Support\Facades\Blade;
 use App\Models\TemplateModel;
+use Dompdf\Dompdf;
 
 class TemplateViewController extends Controller
 {
@@ -16,11 +16,12 @@ class TemplateViewController extends Controller
     }
     public function downloadPDF (Request $request)
     {
-        $response = view('resume_templates/download/first', $_POST);
-//        echo $response;
+        $template = TemplateModel::find($_POST['template_id']);
+        $response = view($template->download_url, $_POST);
         $dompdf = new Dompdf();
         $dompdf->loadHtml($response);
-        $dompdf->render();
+        $dompdf->setPaper('A4');
+        $dompdf->render(); 
         $dompdf->stream();
     }
 }
