@@ -1,5 +1,6 @@
-@extends('check_template')
-@section('template')
+<html>
+<head>
+
     <style>
         html{
             font-family: 'Open Sans',sans-serif;
@@ -208,73 +209,74 @@
             }
         }
     </style>
+</head>
+<body>
+<div id="inner-nav"></div>
+<div id="container">
+    <div id="profile">
+        <p id="name">{{$first_name}} {{$last_name}}<br><span id="email">{{$email}}</span></p>
+        <p id="designation">{{$position}}<br><span id="college">{{$description}}</span></p>
+        <p id="designation">Возраст<br><span id="college">{{$age}}</span></p>
+        <div id="social-links"><a href="#"><i class="fab fa-facebook-f stroke-transparent"></i></a><a><i class="fab fa-twitter stroke-transparent"></i></a><a><i class="fab fa-linkedin-in stroke-transparent"></i></a><a><i class="fab fa-github stroke-transparent"></i></a></div>
+        <hr width="100%">
 
-    <div id="inner-nav"></div>
-    <div id="container">
-        <div id="profile">
-            <p id="name">{{$first_name}} {{$last_name}}<br><span id="email">{{$email}}</span></p>
-            <p id="designation">{{$position}}<br><span id="college">{{$description}}</span></p>
-            <p id="designation">Возраст<br><span id="college">{{$age}}</span></p>
-            <div id="social-links"><a href="#"><i class="fab fa-facebook-f stroke-transparent"></i></a><a><i class="fab fa-twitter stroke-transparent"></i></a><a><i class="fab fa-linkedin-in stroke-transparent"></i></a><a><i class="fab fa-github stroke-transparent"></i></a></div>
-            <hr width="100%">
-
-            <div id="about">
-                <p style="display:inline;">About</p>
-                <a href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a>
-            </div>
-            <span>{{$about_me}}</span></p>
-
-            <div id="about">
-                <p style="display:inline;">Skills</p>
-                <a href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a>
-            </div>
-            <ul>
-                @foreach($skills as $key => $skill)
-                    <li>
-                        {{$skill}}
-                    </li>
-                @endforeach
-            </ul>
-
-            <div id="about">
-                <p style="display:inline;">Languages</p>
-                <a href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a>
-            </div>
-            <span>{{$languages}}</span>
-
-            <p id="telephone">Telephone<br><strong>{{$phone}}</strong></p>
+        <div id="about">
+            <p style="display:inline;">About</p>
+            <a href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a>
         </div>
-        <div id="info-cards">
-            <div class="card">
-                <p><i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Work Experience</p>
-                <ul>
-                    @for($i=0;$i<3;$i++)
-                        @if($experience[$i][0])
-                            <li>
-                                <p class="tags"><p>
-                                    <span>{{$experience[$i][0]}}</span><br>
-                                    {{$experience[$i][1]}}<br><span>{{$experience[$i][2]}} | <span>{{$experience[$i][3]}}</span></span></p>
-                                <a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a>
-                            </li>
-                        @endif
-                    @endfor
-                </ul>
-            </div>
-            <div class="card">
-                <p><i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Projects</p>
-                <ul>
-                    @for($i=0;$i<2;$i++)
-                        @if($project[$i])
-                            <li><p class="tags">{{$project[$i]['description']}}<br><span>{{$project[$i]['name']}}</span></p>
-                                <a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a></li>
-                        @endif
-                    @endfor
-                </ul>
-            </div>
-            <div class="card">
-                <p><i class="fas fa-graduation-cap stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Education</p>
-                {{$education}}
-            </div>
+        <span>{{$about_me}}</span></p>
+
+        <div id="about">
+            <p style="display:inline;">Skills</p>
+            <a href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a>
+        </div>
+        <ul>
+            @foreach($skills as $key => $skill)
+                <li>
+                    {{$skill}}
+                </li>
+            @endforeach
+        </ul>
+
+        <div id="about">
+            <p style="display:inline;">Languages</p>
+            <a href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a>
+        </div>
+        <span>{{$languages}}</span>
+
+        <p id="telephone">Telephone<br><strong>{{$phone}}</strong></p>
+    </div>
+    <div id="info-cards">
+        <div class="card">
+            <p><i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Work Experience</p>
+            <ul>
+                @for($i=0;$i<3;$i++)
+                    @if($experience[$i][0])
+                        <li>
+                            <p class="tags"><p>
+                                <span>{{$experience[$i][0]}}</span><br>
+                                {{$experience[$i][1]}}<br><span>{{$experience[$i][2]}} | <span>{{$experience[$i][3]}}</span></span></p>
+                            <a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a>
+                        </li>
+                    @endif
+                @endfor
+            </ul>
+        </div>
+        <div class="card">
+            <p><i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Projects</p>
+            <ul>
+                @for($i=0;$i<2;$i++)
+                    @if($project[$i])
+                        <li><p class="tags">{{$project[$i]['description']}}<br><span>{{$project[$i]['name']}}</span></p>
+                            <a class="edit" href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a></li>
+                    @endif
+                @endfor
+            </ul>
+        </div>
+        <div class="card">
+            <p><i class="fas fa-graduation-cap stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Education</p>
+            {{$education}}
         </div>
     </div>
-@endsection
+</div>
+</body></html>
