@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Blade;
 use App\Models\TemplateModel;
 use Dompdf\Dompdf;
+use Dompdf\Options;
+
 
 class TemplateViewController extends Controller
 {
@@ -18,10 +20,12 @@ class TemplateViewController extends Controller
     {
         $template = TemplateModel::find($_POST['template_id']);
         $response = view($template->download_url, $_POST);
-        $dompdf = new Dompdf();
+        $options = new Options();
+        $options->set('defaultFont', 'DejaVu Sans');
+        $dompdf = new Dompdf($options);
         $dompdf->loadHtml($response);
         $dompdf->setPaper('A4');
-        $dompdf->render(); 
+        $dompdf->render();
         $dompdf->stream();
     }
 }
