@@ -1,63 +1,9 @@
 @extends('base')
 @section('central_section')
-<style>
-    .data-form {
-        display: flex;
-        flex-direction: column;
-        font-size: 3ex;
-    }
-    body {
-        min-height: 100%;
-        background: #eee;
-        font-family: 'Lato', sans-serif;
-        font-weight: 400;
-        color: #222;
-        font-size: 14px;
-        line-height: 26px;
-        padding-bottom: 50px;
-    }
-    .submit-button {
-        text-align: center;
-        font-size: 20px;
-        height: 50px;
-        width: 300px;
-        border-radius: 10px;
-        background: #3869d4;
-        align-items: center;
-    }
-    .input_field {
-        height: 50px;
-        width: 250px;
-    }
-    .input_field:hover {
-        background: #c2c7d1;
-    }
-    .date_field {
-        width: 250px;
-        height: 50px;
-    }
-    .date_field:hover {
-        background: #c2c7d1;
-    }
-    .text_field{
-        width: 400px;
-        height: 180px;
-    }
-    .text_field:hover {
-        background: #c2c7d1;
-    }
-    .select-field {
-        width: 250px;
-        height: 30px;
-    }
-    .select-field:hover {
-        background: #c2c7d1;
-    }
-</style>
+
 <div class="form-container">
-    <form method="post" action="{{route('check_resume.render')}}" class="data-form">
+    <form method="post" action="{{route('select_template.render')}}" class="data-form">
         @csrf
-        <input type="hidden" name="template_id" value="{{ $template_id }}">
         <label for="first_name">Имя</label>
         <input class="input_field" type="text" name="first_name" placeholder="Иван">
         <label for="last_name">Фамилия</label>
@@ -137,7 +83,7 @@
         <textarea class="text_field" name="about_me" type="text" cols="" rows="" placeholder="Студент российского университета дружбы народов"></textarea>
 
 
-        <button class="submit-button" type="submit">Показать результат</button>
+        <button class="submit-button" type="submit">Выбрать шаблон</button>
     </form>
 </div>
 @endsection

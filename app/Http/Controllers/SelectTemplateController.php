@@ -11,8 +11,7 @@ class SelectTemplateController extends Controller
     public function render ()
     {
         $data = TemplateModel::all();
-//        dump($data);
-        return view('select_template', ['templates' => $data]);
+        return view('select_template', ['templates' => $data], $_POST);
 
     }
 }
