@@ -57,7 +57,7 @@
                     <input type="hidden" name="project[{{$i}}][description]" value="{{ $project[$i]['description'] }}">
                 @endfor
 
-                <button class="submit-button" type="submit">Скачать в pdf</button>
+                {{-- <button class="submit-button" type="submit">Скачать в pdf</button> --}}
             </form>
         </div>
     </body>
