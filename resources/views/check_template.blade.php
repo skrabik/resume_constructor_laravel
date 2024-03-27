@@ -10,6 +10,18 @@
             line-height: 26px;
             padding-bottom: 50px;
         }
+        .download_button {
+            width: 165px;
+            height: 60px;
+            border-radius: 14px;
+            border: none;
+            font-size: 21px;
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+        .download_button:hover {
+            background: #bbc0c4;
+        }
     </style>
     <head>
         <title>Просмотр результата</title>
@@ -57,7 +69,8 @@
                     <input type="hidden" name="project[{{$i}}][description]" value="{{ $project[$i]['description'] }}">
                 @endfor
 
-                {{-- <button class="submit-button" type="submit">Скачать в pdf</button> --}}
+                <button class="download_button" type="submit">Скачать в pdf</button>
+
             </form>
         </div>
     </body>

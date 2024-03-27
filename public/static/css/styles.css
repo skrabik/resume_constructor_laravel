@@ -65,7 +65,6 @@ body {
     color: #222;
     font-size: 14px;
     line-height: 26px;
-    padding-bottom: 50px;
 }
 .submit-button {
     text-align: center;
@@ -104,3 +103,4 @@ body {
 .select-field:hover {
     background: #c2c7d1;
 }
+
