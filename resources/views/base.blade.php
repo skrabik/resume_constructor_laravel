@@ -16,6 +16,6 @@
             </div>
         </div>
         </div>
-        <div class="footer">Обратная связь: <a href="mailto:babenk00r@yandex.ru">babenk00r@yandex.ru</a></div>
+        <div class="footer">Обратная связь: <span><a class="mail_ref" href="mailto:babenk00r@yandex.ru">babenk00r@yandex.ru</a></span></div>
 </body>
 </html>

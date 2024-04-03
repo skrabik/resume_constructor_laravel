@@ -17,8 +17,9 @@ body {
 }
 
 .header {
-    background: #9fcdff;
+    background: #ebe6e6;
     font-size: 3ex;
+    border-bottom: 1px solid black;
 }
 .inner-header {
     text-align: left;
@@ -29,14 +30,13 @@ body {
     display: flex;
 }
 .footer {
-    background: #2d3748;
-    color: white;
+    background: #ebe6e6;
+    border-top: 1px solid black;
     font-size: 1.2rem;
     text-align: end;
     min-height: 5vh;
     padding-top: 10px;
     padding-right: 10px;
-
 }
 .main-button {
     justify-content: left;
@@ -45,18 +45,52 @@ body {
     height: 50px;
     width: 300px;
     border-radius: 10px;
-    background: #3869d4;
+    background: #ebe6e6;
 }
+.main-button:hover {
+    background: #bbc0c4;
+}
+
 .container {
     justify-content: center;
     align-items: flex-end;
+    margin: 20px;
+    width: 100%;
 }
 
 .data-form {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
     font-size: 3ex;
+    width: 100%;
+    min-height: 440px;
 }
+
+.template_div {
+    width: 300px;
+    height: auto;
+}
+
+
+.template_div:hover {
+    background-color: #eee;
+}
+
+
+input[type=radio] {
+    border: 0px;
+    width: 100%;
+    height: 2em;
+}
+
+.template_image {
+    width: 100%;
+    /* height: 100px; */
+}
+
 body {
     min-height: 100%;
     background: #eee;
@@ -72,26 +106,42 @@ body {
     height: 50px;
     width: 300px;
     border-radius: 10px;
-    background: #3869d4;
+    background: #ebe6e6;
     align-items: center;
 }
-.input_field {
-    height: 50px;
-    width: 250px;
+
+.submit-button:hover {
+    background: #bbc0c4;
 }
+
+.input_field {
+    height: 45px;
+    width: 250px;
+    border: 1px solid #000;
+    font-size: 22px;
+    border-radius: 3px;
+}
+
 .input_field:hover {
     background: #c2c7d1;
 }
+
 .date_field {
     width: 250px;
     height: 50px;
+    border: 1px solid #000;
+    font-size: 22px;
+    border-radius: 3px;
 }
 .date_field:hover {
     background: #c2c7d1;
 }
 .text_field{
-    width: 400px;
-    height: 180px;
+    width: 600px;
+    height: 200px;
+    border: 1px solid #000;
+    font-size: 18px;
+    border-radius: 3px;
 }
 .text_field:hover {
     background: #c2c7d1;
@@ -99,8 +149,47 @@ body {
 .select-field {
     width: 250px;
     height: 30px;
+    border-radius: 3%;
 }
 .select-field:hover {
     background: #c2c7d1;
 }
 
+.mail_ref {
+    text-decoration: none; 
+    color: black;
+}
+
+
+.select_page_title {
+    width: 100%;
+}
+
+.templates_flex_container {
+    display: flex;
+    justify-content: center;
+}
+
+.select-field {
+    font-size: 22px;
+    width: 250px;
+    height: 45px;
+}
+
+.section_t1 {
+    width: 100%;
+    margin: 5px;
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    background-color: #e1e7eb;
+    border-radius: 3px;
+}
+
+.section_t2 {
+    width: 100%;
+    margin: 5px;  
+    padding: 7px;
+    background-color: #e1e7eb;
+    border-radius: 3px;
+}
