@@ -14,7 +14,7 @@ class TemplateViewController extends Controller
     public function render ()
     {
         $template = TemplateModel::find($_POST['template_id']);
-        return view($template->template_url, $_POST);
+        return view($template->template_url, ['title' => 'Просмотр результата'], $_POST);
     }
     public function downloadPDF (Request $request)
     {

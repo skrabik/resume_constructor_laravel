@@ -8,6 +8,6 @@ class MainPageController extends Controller
 {
     public function render ()
     {
-        return  view('main');
+        return  view('main', ['title' => 'Конструктор резюме']);
     }
 }

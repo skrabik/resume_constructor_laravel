@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Главная страница</title>
+    <title>{{$title}}</title>
+    <link rel="icon" href="{{ asset('static/images/icon.ico') }}" type="iamge/x-icon">
     <link href="{{ asset('static/css/styles.css') }}" rel="stylesheet">
 </head>
 <body>
         <div class="header">
             <div class="inner-header">
-                Создай своё резюме!
+                <a href={{ route('main.render') }}>Создай своё резюме!</a>
             </div>
         </div>
         <div class="main-block">
