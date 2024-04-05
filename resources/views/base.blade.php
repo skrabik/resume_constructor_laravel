@@ -8,7 +8,7 @@
 <body>
         <div class="header">
             <div class="inner-header">
-                <a href={{ route('main.render') }}>Создай своё резюме!</a>
+                <a class="ref" href={{ route('main.render') }}>Создай своё резюме!</a>
             </div>
         </div>
         <div class="main-block">
@@ -17,6 +17,6 @@
             </div>
         </div>
         </div>
-        <div class="footer">Обратная связь: <span><a class="mail_ref" href="mailto:babenk00r@yandex.ru">babenk00r@yandex.ru</a></span></div>
+        <div class="footer">Обратная связь: <span><a class="ref" href="mailto:babenk00r@yandex.ru">babenk00r@yandex.ru</a></span></div>
 </body>
 </html>

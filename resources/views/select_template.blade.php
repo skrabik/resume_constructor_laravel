@@ -1,6 +1,7 @@
 @extends('base')
 @section('central_section')
-    <div class="select_page_title"><h2>Выбор шаблона</h2></div>
+    <div>
+    <div class="select_page_title"><h2 style="padding: 20px">Выбор шаблона</h2></div>
         <form id='myform' method="post" action="{{ route('check_resume.render') }}" class="data-form">
             @csrf
             <input type="hidden" name="template_id" value="{{ $templates[0]->id }}">
@@ -50,4 +51,5 @@
     </form>
     <button form="myform" class='submit-button'>Показать результат</button>
     <a href='{{ route('create.main') }}'><button class='submit-button'>Назад</button></a>
+    </div>
 @endsection
