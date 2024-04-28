@@ -32,7 +32,7 @@
             <input type="hidden" name="languages" value="{{ $languages }}">
             <input type="hidden" name="about_me" value="{{ $about_me }}">
 
-
+            
             @for($i = 0; $i<5; $i++)
                 <input type="hidden" name="skills[{{$i}}]" value="{{$skills[$i]}}">
             @endfor
