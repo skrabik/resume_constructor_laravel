@@ -20,8 +20,6 @@
 docker-compose up -d
 ```
 
-
-
 * Установить `composer` расширения
 ```
 docker exec myapp php composer.phar update
