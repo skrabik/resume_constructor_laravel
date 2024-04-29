@@ -25,3 +25,7 @@ docker-compose up -d
 docker exec myapp php composer.phar update
 ```
 
+* Чтобы развернуть дамп базы данных
+```
+docker exec database sh -c "mysql -uroot -p1234 resume_constructor_laravel < rcl.sql"
+```
