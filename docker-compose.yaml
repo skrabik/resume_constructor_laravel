@@ -29,6 +29,9 @@ services:
     volumes:
       - ./src:/var/www/laravel
 
+    depends_on:
+      - database
+
   database:
     build: 
       context: mysql
